@@ -1,0 +1,44 @@
+print("This program will calculate approxitmately how many breaths you have taken")
+print("and how many heartbeats you have had. Please enter your ages in years.") 
+#Variable to control to run loop again.
+repeat = True
+#Variable for year in minutes
+mins = 525600
+#Loop for if user would like to run program again
+while repeat:
+    print()
+    #User input for age.Assigned to float data type.
+    age = float(input("Please enter your age: "))
+    print()
+    #Calculation for breaths.
+    #breaths=(mins*45)+(4*mins*25)+(10*mins*20)+((age-15)*year*16)
+    #if / elif / elif/ else statment calculations based on age.
+    if age >=15:
+        breaths=(mins*45)+(4*mins*25)+(10*mins*20)+((age-15)*mins*16)
+    elif  age >=5:
+        breaths = (mins*45)+(4*mins*25)+(10*mins*20)+((age-5)*mins)
+    elif  age >=1:
+        breaths = (mins*45)+(4*mins*25)+((age-1)*mins)
+    else:
+        breaths = ((mins*45)*age)
+    #Calculation for number of heartbeats.
+    heartbeats = (age*mins) * 67.5
+    
+    #Display of answers formatted to .0f with commas.
+    print("You have taken about", format(breaths,',.0f'), "breaths in your 
+lifetime.")
+    print("You heart has beat approximatly", format(heartbeats,',.0f'), "times.")
+    print()
+    #Asking the user if they would like to run program again.
+    run = input("Would you like to run the program again? (y/n): ")
+    if run == 'n': repeat= False
+    elif run == 'y': repeat = True
+    #Error check input.
+    else:
+        rerun= input("INPUT ERROR:Please enter y or n: ") 
+        if rerun == 'n': repeat = False
+        elif rerun == 'y': repeat = True
+        
+#Exit Message
+print()
+print("Have a nice day.")
